@@ -1,0 +1,31 @@
+<mat-card class="sga-card">
+
+    <mat-toolbar>Avaliações</mat-toolbar>
+    <mat-card-content>
+        <table mat-table [dataSource]="listaAvaliacao" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef>Data</th>
+                <td mat-cell *matCellDef="let element"> {{element.data | date: 'dd/MM/yyyy' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="descricao">
+                <th mat-header-cell *matHeaderCellDef>Descrição</th>
+                <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-card style="text-align: center" *ngIf="!listaAvaliacao.length" class="sga-card">
+                Nenhuma avalição encontrada
+        </mat-card>
+
+    </mat-card-content>
+
+</mat-card>

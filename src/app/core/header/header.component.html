@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <!-- <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div> -->
+    <div>
+        <a routerLink="/home">SGA</a>
+    </div>
+    <span class="fill-space"></span>
+
+    <div *ngIf="currentUser" fxShow="true" fxHide.lt-md="true">
+
+        <a *ngIf="isBpOuMentor" mat-button [routerLink]="['formularios']">
+            <h1>Formulários</h1>
+        </a>
+
+        <a *ngIf="isBpOuGerente" mat-button [routerLink]="['home']">
+            <h1>Todas as Avaliações</h1>
+        </a>
+
+        <a mat-button (click)="logout()">
+            <h1>Sair</h1>
+        </a>
+
+    </div>
+
+    <div *ngIf="!currentUser" fxShow="true" fxHide.lt-md="true">
+        <a mat-button [routerLink]="['login']">
+            <h1>Login</h1>
+        </a>
+        <a [routerLink]="['cadastro']" mat-button>
+            <h1>Cadastrar</h1>
+        </a>
+    </div>
+
+</mat-toolbar>

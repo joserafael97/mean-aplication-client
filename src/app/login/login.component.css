@@ -1,0 +1,21 @@
+
+.full-width {
+    width: 100%;
+}
+
+
+.main-div{
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.mat-card {
+  width: 30%;
+}
+
+.mat-card-header-text {
+  height: auto;
+  margin: 0;
+}

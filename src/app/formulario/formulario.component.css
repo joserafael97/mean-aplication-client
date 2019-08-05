@@ -1,0 +1,19 @@
+.sga-main-div{
+    padding-right: 3%;
+    padding-left: 3%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.mat-radio-button {margin-right: 30px;}
+
+.h1{
+    font-weight:normal; 
+}
+.sga-title-form-principal{
+}
+
+table {
+    width: 100%;
+}

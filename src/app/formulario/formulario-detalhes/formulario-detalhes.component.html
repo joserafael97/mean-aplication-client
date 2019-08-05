@@ -1,0 +1,46 @@
+
+<mat-card class="sga-card">
+
+    <mat-toolbar>Formulário de Avaliação Profissional</mat-toolbar>
+
+
+    <mat-card class="sga-card">
+
+        <mat-card-header>
+            <mat-card-title>Tópico 01</mat-card-title>
+        </mat-card-header>
+        <p>Fazer a diferença: Busca atuar com iniciativa para apresentar novas propostas e soluções que além de auxiliar
+            nas atividades desempenhadas, fazem a diferença para o todo;</p>
+
+
+        <div fxLayout fxLayoutAlign="right right" fxLayoutGap="30px">
+
+            <mat-radio-group class="example-radio-group">
+                <mat-radio-button *ngFor="let value of keys(respostas)" [(value)]="respostas[value]">
+                    {{respostas[value]}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card class="sga-card">
+
+        <mat-card-header>
+            <mat-card-title>Tópico 01</mat-card-title>
+        </mat-card-header>
+        <p>Agir como empreendedor: Está sempre atento à mudanças e novidades para implementar novas maneiras de se fazer
+            as coisas por aqui;</p>
+
+        <div fxLayout fxLayoutAlign="right right" fxLayoutGap="30px">
+            <mat-radio-group class="example-radio-group">
+                <mat-radio-button *ngFor="let value of keys(respostas)" [(value)]="respostas[value]">
+                    {{respostas[value]}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </mat-card>
+
+
+</mat-card>

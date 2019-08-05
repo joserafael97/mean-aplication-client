@@ -1,0 +1,162 @@
+<mat-card class="sga-card">
+    <mat-toolbar>Novo modelo de Formulário</mat-toolbar>
+    <form [formGroup]="formularioForm" (ngSubmit)="cadastrar()">
+
+
+        <mat-card-content>
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tipo Do Fomulário</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <mat-label>Tipo</mat-label>
+                        <mat-select required formControlName="tipo">
+                            <mat-option *ngFor="let value of keys(tiposFormularios)"
+                                [(value)]="tiposFormularios[value]">
+                                {{tiposFormularios[value]}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.tipo.errors?.required">
+                            O Tipo é requerido
+                        </mat-error>
+                    </mat-form-field>
+                </mat-card-content>
+
+            </mat-card>
+
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 01</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema01" required
+                            formControlName="pergunta1"></textarea>
+                        <mat-error *ngIf="form.pergunta1.errors?.required">
+                            O tema 01 é requerido
+                        </mat-error>
+                    </mat-form-field>
+
+                </mat-card-content>
+
+            </mat-card>
+
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 02</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema02" required
+                            formControlName="pergunta2"></textarea>
+                        <mat-error *ngIf="form.pergunta2.errors?.required">
+                            O tema 02 é requerido
+                        </mat-error>
+                    </mat-form-field>
+
+                </mat-card-content>
+
+            </mat-card>
+
+
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 03</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema03" required
+                            formControlName="pergunta3"></textarea>
+                        <mat-error *ngIf="form.pergunta3.errors?.required">
+                            O tema 03 é requerido
+                        </mat-error>
+                    </mat-form-field>
+
+                </mat-card-content>
+
+            </mat-card>
+
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 04</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema04" required
+                            formControlName="pergunta4"></textarea>
+                        <mat-error *ngIf="form.pergunta4.errors?.required">
+                            O tema 04 é requerido
+                        </mat-error>
+                    </mat-form-field>
+
+
+                </mat-card-content>
+
+            </mat-card>
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 05</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema05" required
+                            formControlName="pergunta5"></textarea>
+                        <mat-error *ngIf="form.pergunta5.errors?.required">
+                            O tema 05 é requerido
+                        </mat-error>
+                    </mat-form-field>
+
+                </mat-card-content>
+
+            </mat-card>
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 06</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema06" required
+                            formControlName="pergunta6"></textarea>
+                        <mat-error *ngIf="form.pergunta6.errors?.required">
+                            O tema 06 é requerido
+                        </mat-error>
+                    </mat-form-field>
+
+                </mat-card-content>
+
+
+            </mat-card>
+
+            <mat-card class="sga-card">
+                <mat-card-header>
+                    <mat-card-title>Tema 07</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <mat-form-field class="full-width-field">
+                        <textarea matInput placeholder="Descreva o que será avaliado" name="tema07" required
+                            formControlName="pergunta7"></textarea>
+                        <mat-error *ngIf="form.pergunta7.errors?.required">
+                            O tema 07 é requerido
+                        </mat-error>
+                    </mat-form-field>
+                </mat-card-content>
+            </mat-card>
+        </mat-card-content>
+        <mat-toolbar>
+            <mat-card-actions>
+                <button type="submit" mat-raised-button color="primary">Cadastrar</button>
+            </mat-card-actions>
+        </mat-toolbar>
+
+    </form>
+
+</mat-card>

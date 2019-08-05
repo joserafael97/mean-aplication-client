@@ -1,0 +1,53 @@
+<mat-card class="sga-card">
+
+    <mat-toolbar>Modelos de Formulário para Avaliação Profissional</mat-toolbar>
+    <mat-card-content>
+
+        <table mat-table [dataSource]="listaFormularios" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="tipo">
+                <th mat-header-cell *matHeaderCellDef>Tipo</th>
+                <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Ativo</th>
+                <td mat-cell *matCellDef="let element">
+                    <button *ngIf="element.ativo" matTooltip="Status do formulário" mat-icon-button>
+                        <mat-icon style="color: green">check</mat-icon>
+                    </button>
+                    <button *ngIf="!element.ativo" matTooltip="Status do formulário" mat-icon-button>
+                        <mat-icon style="color: red">clear</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="remover">
+                <th mat-header-cell *matHeaderCellDef>Remover </th>
+                <td mat-cell *matCellDef="let element">
+                    <button style="background-color: #f7f7f7" matTooltip="Clique para remover"
+                        (click)="openDialog(element.id)" mat-icon-button>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-card style="text-align: center" *ngIf="!listaFormularios.length" class="sga-card">
+            Nenhum Formulário encontrado
+        </mat-card>
+
+    </mat-card-content>
+    <mat-toolbar>
+        <mat-card-actions>
+            <button [routerLink]="['cadastrar-modelo']" mat-raised-button color="primary">Cadastrar</button>
+        </mat-card-actions>
+    </mat-toolbar>
+
+
+
+</mat-card>

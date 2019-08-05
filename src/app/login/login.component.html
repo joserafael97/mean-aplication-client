@@ -1,0 +1,36 @@
+<div class="main-div">
+
+    <mat-card class="my-card">
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()">
+
+            <mat-card-content>
+                <mat-form-field class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" name="username" required formControlName="username">
+
+                    <mat-error *ngIf="form.username.errors?.required">
+                        O seu username deve ser informada.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Senha</mat-label>
+                    <input type="password" matInput placeholder="Senha" name="senha" required formControlName="senha">
+                    <mat-error *ngIf="form.senha.errors?.required">
+                        A sua senha deve ser informada.
+                    </mat-error>
+                </mat-form-field>
+                <mat-error *ngIf="error">
+                   {{error}}
+                </mat-error>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary">Login</button>
+            </mat-card-actions>
+        </form>
+
+    </mat-card>
+</div>
