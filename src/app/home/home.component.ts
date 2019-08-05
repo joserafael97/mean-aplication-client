@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
   ) {
     this.autenticacaoService.currentUser.subscribe(x => this.currentUser = x);
     this.inicializaAvaliacoes();
+
+    if (this.isBpOuMentor) {
+      this.displayedColumns.push('avaliar')
+    }
   }
 
   inicializaAvaliacoes() {
